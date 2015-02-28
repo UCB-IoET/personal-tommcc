@@ -243,7 +243,9 @@ static int svcd_unsubscribe( lua_State *L )
     lua_pushstring(L, "ncsock");
     lua_gettable(L, 5);
     //msg as str
-    lua_pushlightfunction(L, ); // whatt...
+    lua_pushlightfunction(L, arr_as_str);
+    lua_pushstring(L, "msg");
+    lua_call(L, 1, 0);
     lua_pushvalue(L, 1);
     lua_pushnumber(L, 2530);
     lua_call(L, 4, 0);
